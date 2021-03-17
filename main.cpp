@@ -5,6 +5,51 @@
 //------------------------------
 
 // Write the assignment code here
+class Real{
+protected:
+  double real;
+
+public:
+  Real(double input=0){
+    real = input;
+  }
+    double GetReal()const { return real; }
+    Real operator+(const double& other) {
+      Real returnReal{real + other};
+      return returnReal;
+    }
+};
+
+class Complex: public Real{
+protected:
+  double complex;
+
+public:
+  Complex(double inputA=0, double inputB=0){
+    real = inputA;
+    complex = inputB;
+  }
+  double GetImaginary()const { return complex; }
+  Complex operator+(const double& other){
+    Complex returnComplex{real + other, complex + other};
+    return returnComplex;
+  }
+};
+class Surreal: public Complex{
+  double surreal;
+
+public:
+  Surreal(double inputA, double inputB, double inputC){
+    real = inputA;
+    complex = inputB;
+    surreal = inputC;
+  }
+  double GetSurreal()const { return surreal; }
+  Surreal operator+(const double& other){
+    Surreal returnSurreal{real + other, complex + other, surreal + other};
+    return returnSurreal;
+  }
+};
 
 
 //------------------------------
